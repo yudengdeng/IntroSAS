@@ -8,14 +8,23 @@ datalines;
 97 97 89 69 72 82 83 81 80 81
 ;
 
- 
 /*Input Sashelp.iris — Fisher’s Iris Data (1936)*/
-TITLE "Fisher's Iris Data (1936)";
+/*Get the variable names and types*/
+title "Sashelp.iris --- Fisher's Iris Data (1936)";
+proc contents data=sashelp.iris varnum;
+ods select position;
+run;
 
-
-
-PROC PRINT DATA=sashelp.iris(obs=5);
+/*Get the first 5 observations from the complete data*/
+title "The First Five Observations Out of 150";
+PROC PRINT DATA=sashelp.iris(obs=5) noob;
 RUN; 
+
+/*Get the frequency table of variable*/
+title "The Species Variable";
+proc freq data=sashelp.iris;
+tables Species;
+run;
 
 
 PROC CONTENTS DATA=sashelp.iris varnum;
