@@ -9,7 +9,22 @@ datalines;
 ;
 
  
-/*Check if the input adjacency data set exists or not*/
+/*Input Sashelp.iris — Fisher’s Iris Data (1936)*/
+TITLE "Fisher's Iris Data (1936)";
+PROC CONTENTS DATA=sashelp.iris varnum;
+ods select position;
+run;
+
+title "The First Five Observations Out of 150";
+proc print data=sashelp.iris(obs=5) noobs;
+run;
+title "The Species Variable";
+proc freq data=sashelp.iris;
+tables Species;
+run;
+
+
+
 PROC MEANS data = exam n mean median;
 VAR score;
 RUN;
