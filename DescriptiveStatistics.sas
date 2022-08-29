@@ -20,35 +20,39 @@ title "The First Five Observations Out of 150";
 PROC PRINT DATA=sashelp.iris(obs=5) noob;
 RUN; 
 
-/*Get the frequency table of variable*/
+/*Get the frequency table by Species*/
 title "The Species Variable";
 proc freq data=sashelp.iris;
 tables Species;
 run;
 
+title "Through the MEANS Procedure: Mean and Median";
+PROC MEANS DATA = SASHELP.IRIS N MEAN MEDIAN;
+VAR SepalLength;
+RUN;	
 
-PROC CONTENTS DATA=sashelp.iris varnum;
-ods select position;
-run;
-
-title "The First Five Observations Out of 150";
-proc print data=sashelp.iris(obs=5) noobs;
-run;
-title "The Species Variable";
-proc freq data=sashelp.iris;
-tables Species;
-run;
-
-
-
-PROC MEANS data = exam n mean median;
-VAR score;
+title "Through the MEANS Procedure: Standard Deviation, Range and Interquartile Range";
+PROC MEANS data = SASHELP.IRIS std range qrange;
+VAR SepalLength;
 RUN;
 
- 
-
-PROC UNIVARIATE data = exam modes;
-
-VAR score;
-
+TITLE "Through the MEANS Procedure: Standard Deviation, Range and Interquartile Range categorized by Species";
+PROC MEANS data = SASHELP.IRIS std range qrange;
+CLASS Species;
+VAR SepalLength;
 RUN;
+
+ODS GRAPHIC ON;
+
+TITLE "Historgram and Probability plots for SepalLength by Species";
+PROC UNIVARIATE DATA = SASHELP.IRIS;
+CLASS Species;
+VAR SepalLength;
+HISTOGRAM SepalLength;
+INSET SKENEWSS KURTOSIS;
+PROBPLOT SepalLength;
+INSET SKENEWSS KURTOSIS;
+RUN;
+
+ODS GRAPHIC OFF;
+
