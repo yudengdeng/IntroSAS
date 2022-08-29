@@ -1,6 +1,30 @@
-/* Import data from files directly*/
-DATA [name of the data set]
+/* Import .txt data from files directly*/
+DATA [name of the data set];
 INFLE "[the path and the file name with extension .txt]"
-DELIMITER = [the delimiter]
-INPUT [variable name]
+DELIMITER = [the delimiter];
+INPUT [variable name];
 RUN;
+
+
+/* An example */
+DATA NAIVESAMPLE;
+INFLE "/home/u59261703/Data/naivesample.txt"
+DELIMITER = " ";
+INPUT A B;
+RUN;
+
+
+/* Import .txt data from files directly with Tab delimited*/
+PROC IMPORT OUT = [name of the data set]
+DATAFILE =  "[the path and the file name with extension .txt]"
+DBMS = TAB REPLACE;
+GETNAMES = YES; /*YES if the first row is the header*/
+RUN;
+
+/* An example */
+PROC IMPORT OUT = production
+DATAFILE =  "/home/u59261703/Data/production.txt"
+DBMS = TAB REPLACE;
+GETNAMES = YES; /*YES if the first row is the header*/
+RUN;
+
