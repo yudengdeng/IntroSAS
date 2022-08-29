@@ -27,3 +27,17 @@ GETNAMES = YES; /*YES if the first row is the header*/
 RUN;
 
 /* Import .csv data from files directly*/
+PROC IMPORT OUT = [name of the data set]
+DATAFILE =  "[the path and the file name with extension .txt]"
+DBMS = CSV REPLACE;
+GETNAMES = YES; /*YES if the first row is the header*/
+DATAROW = 2; /*From which row the data starts*/
+RUN;
+
+/* An example */
+PROC IMPORT OUT = HoustonRealEstate
+DATAFILE =  "/home/u59261703/Data/HoustonRealEstate.csv"
+DBMS = CSV REPLACE;
+GETNAMES = YES; /*YES if the first row is the header*/
+DATAROW = 2; /*From which row the data starts*/
+RUN;
