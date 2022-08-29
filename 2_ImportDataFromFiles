@@ -26,3 +26,4 @@ DBMS = TAB REPLACE;
 GETNAMES = YES; /*YES if the first row is the header*/
 RUN;
 
+/* Import .csv data from files directly*/
