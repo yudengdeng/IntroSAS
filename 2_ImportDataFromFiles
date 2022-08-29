@@ -5,14 +5,12 @@ DELIMITER = [the delimiter];
 INPUT [variable name];
 RUN;
 
-
 /* An example */
 DATA NAIVESAMPLE;
 INFLE "/home/u59261703/Data/naivesample.txt"
 DELIMITER = " ";
 INPUT A B;
 RUN;
-
 
 /* Import .txt data from files directly with Tab delimited*/
 PROC IMPORT OUT = [name of the data set]
