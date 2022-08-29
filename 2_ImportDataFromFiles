@@ -1,5 +1,6 @@
 /* Import data from files directly*/
 DATA [name of the data set]
 INFLE "[the path and the file name with extension .txt]"
+DELIMITER = [the delimiter]
 INPUT [variable name]
 RUN;
