@@ -1,3 +1,4 @@
+/*Input a data set called "exam" manually*/
 data exam;
 label score = 'Exam Score';
 input score @@;
