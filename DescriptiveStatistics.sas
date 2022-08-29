@@ -11,6 +11,13 @@ datalines;
  
 /*Input Sashelp.iris — Fisher’s Iris Data (1936)*/
 TITLE "Fisher's Iris Data (1936)";
+
+
+
+PROC PRINT DATA=sashelp.iris(obs=5);
+RUN; 
+
+
 PROC CONTENTS DATA=sashelp.iris varnum;
 ods select position;
 run;
