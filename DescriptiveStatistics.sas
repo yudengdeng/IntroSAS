@@ -1,13 +1,3 @@
-/*Input a data set called "exam" manually*/
-data exam;
-label score = 'Exam Score';
-input score @@;
-datalines;
-81 97 78 99 77 81 84 86 86 97
-85 86 94 76 75 42 91 90 88 86
-97 97 89 69 72 82 83 81 80 81
-;
-
 /*Input Sashelp.iris — Fisher’s Iris Data (1936)*/
 /*Get the variable names and types*/
 title "Sashelp.iris --- Fisher's Iris Data (1936)";
