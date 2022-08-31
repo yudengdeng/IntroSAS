@@ -1,4 +1,4 @@
-/* Match-Merge Observations Based on a BY Variable */
+/* Match-Merging Observations Based on a BY Variable */
 data animal;
 input common $ animal $;
 datalines;
