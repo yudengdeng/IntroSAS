@@ -5,8 +5,8 @@ PROFIT = MSRP - INVOICE;
 RUNS;
 
 
-/* Calculate a new variable called CLASS*/
-/* IF ELSE statement/
+/* Calculate a new variable called CLASS */
+/* IF ELSE statement */
 DATA WORK.CARS;
 SET SASHELP.CARS;
 IF MSRP > 45000 THEN CLASS = "LUXURY";
@@ -16,18 +16,18 @@ RUNS;
 
 
 /* DO statement */
-/* CAT statement to concatenate*/
+/* CAT statement to concatenate */
 DATA WORK.CARS;
 SET SASHELP.CARS;
 IF MSRP > 45000 THEN DO;
-CLASS = "LUXURY"
+CLASS = "LUXURY";
 PRICE = "HIGH";
 END;
 ELSE DO;
 CLASS = "NOT LUXURY";
 PRICE = "LOW";
 END;
-UNIQUE-CAR = CATX("|",MAKE,MODEL);
+UNIQUECAR = CATX("|",MAKE,MODEL);
 IF UPCASE(ORIGIN) = "EUROPE" THEN DO;
 SALES_TAXES = MSRP * 0.10;
 LUXURY_TAXES = (MSRP - 45000) * 0.025;
