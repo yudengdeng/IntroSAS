@@ -39,14 +39,33 @@ run;
 
 
 /* Label */
-
-title "Sashelp.baseball --- 1986 Baseball Data";
-proc contents data=sashelp.baseball varnum;
-ods select position;
-run;
-
 title "The First Five Observations Out of 322";
 proc print data=sashelp.baseball(obs=5) noobs;
 run;
 
+DATA WORK.BASEBALL;
+SET SASHELP.BASEBALL;
+LABEL
+Name = "Last Name, First";
+RUN;
 
+PROC CONTENTS DATA = WORK.BASEBALL;
+RUN;
+
+DATA WORK.BASEBALL;
+SET SASHELP.BASEBALL;
+LABEL
+Name = "Last Name, First Name";
+RUN;
+
+PROC CONTENTS DATA = SASHELP.BASEBALL;
+RUN;
+
+
+title "The First Five Observations Out of 322";
+proc print data=sashelp.baseball(obs=5) noobs label;
+run;
+
+title "The First Five Observations Out of 322";
+proc print data=work.baseball(obs=5) noobs label;
+run;
