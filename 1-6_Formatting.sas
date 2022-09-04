@@ -61,7 +61,6 @@ RUN;
 PROC CONTENTS DATA = SASHELP.BASEBALL;
 RUN;
 
-
 title "The First Five Observations Out of 322";
 proc print data=sashelp.baseball(obs=5) noobs label;
 run;
@@ -69,3 +68,18 @@ run;
 title "The First Five Observations Out of 322";
 proc print data=work.baseball(obs=5) noobs label;
 run;
+
+/* Split */
+PROC PRINT DATA = SASHELP.BASEBALL LABEL;
+FORMAT NAME $4.;
+LABEL
+NAME = "Last Name, First Name";
+RUN;
+
+PROC PRINT DATA = SASHELP.BASEBALL LABEL SPLIT = "*";
+FORMAT NAME $4.;
+LABEL
+NAME = "Last Name, Fi*rst Name";
+RUN;
+
+/* PROCD FORMAT */
