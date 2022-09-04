@@ -11,7 +11,6 @@ PROC PRINT DATA = SASHELP.BASEBALL(obs=5) noobs;
 FORMAT SALARY DOLLAR9.2 NAME $4.;
 RUN;
 
-
 /* Format: Date */
 title "Sashelp.buy";
 proc print data=SASHELP.BUY(obs=5) noobs;
@@ -83,3 +82,12 @@ NAME = "Last Name, Fi*rst Name";
 RUN;
 
 /* PROCD FORMAT */
+PROC FORMAT;
+VALUE SALARYRANGE 0-<200 = "SALARY1"
+200-<400 = "SALARY2"
+400-<600 = "SALARY3";
+RUN;
+
+PROC PRINT DATA = WORK.BASEBALL(obs=5) noobs;
+FORMAT SALARY SALARYRANGE.;
+RUN;
