@@ -14,4 +14,4 @@ Chapter 2\
 2-1 Descriptive Statistics\
 2-2 Stastistical Comparison\
 2-3 Model Prediction\
-2-4 Model Selection\
+2-4 Model Selection
