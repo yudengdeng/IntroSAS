@@ -3,23 +3,15 @@ This is an introduction to SAS basic programming.
 
 Chapter 1\
 \
-1-1_Enter Data Manually\
+1-1 Enter Data Manually\
 1-2 Import Data From Files\
-1-3_Create New Variables\
-1-4_Subsetting Data\
-1-5_Merge Data\
-1-6_Formatting \
+1-3 Create New Variables\
+1-4 Subsetting Data\
+1-5 Merge Data\
+1-6 Data Formatting \
 \
 Chapter 2\
-2-1_DescriptiveStatistics.sas
-Rename DescriptiveStatistics.sas to 2-1_DescriptiveStatistics.sas
-5 days ago
-2-2_comparison.sas
-Update 2-2_comparison.sas
-2 minutes ago
-2-3_Prediction.sas
-Update 2-3_Prediction.sas
-4 minutes ago
-2-4_ModelSelection.sas
-Update 2-4_ModelSelection.sas
-8 minutes ago
+2-1 Obtain Descriptive Statistics \ 
+2-2 Stastistical Comparison\
+2-3 Model Prediction\
+2-4 Model Selection\
