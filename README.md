@@ -11,7 +11,7 @@ Chapter 1\
 1-6 Data Formatting \
 \
 Chapter 2\
-2-1 Obtain Descriptive Statistics \ 
+2-1 Obtain Descriptive Statistics\ 
 2-2 Stastistical Comparison\
 2-3 Model Prediction\
 2-4 Model Selection\
