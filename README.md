@@ -1,18 +1,16 @@
 # IntroSAS
 This is an introduction to SAS basic programming.
 
+Chapter 1\
+\
 1-1_Enter Data Manually\
 1-2 Import Data From Files\
 1-3_Create New Variables\
 1-4_Subsetting Data\
-Rename 4_SubsettingData.sas to 1-4_SubsettingData.sas
-5 days ago
-1-5_MergeData.sas
-Rename 5_MergeData.sas to 1-5_MergeData.sas
-5 days ago
-1-6_Formatting.sas
-Update 1-6_Formatting.sas
-8 hours ago
+1-5_Merge Data\
+1-6_Formatting \
+\
+Chapter 2\
 2-1_DescriptiveStatistics.sas
 Rename DescriptiveStatistics.sas to 2-1_DescriptiveStatistics.sas
 5 days ago
