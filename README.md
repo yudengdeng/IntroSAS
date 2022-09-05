@@ -1,12 +1,10 @@
 # IntroSAS
 This is an introduction to SAS basic programming.
 
-1-1_Enter Data Manually
-1-2 Import Data From Files
-1-3_Create New Variables
-Rename 3_CreateNewVariables.sas to 1-3_CreateNewVariables.sas
-5 days ago
-1-4_SubsettingData.sas
+1-1_Enter Data Manually\
+1-2 Import Data From Files\
+1-3_Create New Variables\
+1-4_Subsetting Data\
 Rename 4_SubsettingData.sas to 1-4_SubsettingData.sas
 5 days ago
 1-5_MergeData.sas
