@@ -21,13 +21,21 @@ f Fig
 e Eggplant
 ;
 
-
-DATA MATCHMERGE;
-    merge ANIMAL PLANT;
-    by common;
+PROC SORT DATA = ANIMAL;
+	BY common;
 RUN;
 
-PROC PRINT DATA=MATCHMERGE; 
+PROC SORT DATA = PLANT;
+	BY common;
+RUN;
+
+
+DATA MATCHMERGE;
+	MERGE ANIMAL PLANT;
+	BY common;
+RUN;
+
+PROC PRINT DATA = MATCHMERGE;
 RUN;
 
 /* Match-Merge Observations with Different Values of the BY Variable */
@@ -40,7 +48,6 @@ d Dog
 e Eagle
 ;
 
-
 DATA PLANTMISSING;
 INPUT common $ plant $;
 DATALINES;
@@ -51,19 +58,19 @@ e Eggplant
 f Fig
 ;
 
-
-PROC SORT DATA = ANIMALMISSING; 
-	by common; 
+PROC SORT DATA = ANIMALMISSING;
+	BY common;
 RUN;
 
-PROC SORT DATA = PLANTMISSING; 
-	by common; 
+
+PROC SORT DATA = PLANTMISSING;
+	BY common;
 RUN;
 
 DATA MATCHMERGE;
-    merge ANIMALMISSING PLANTMISSING;
-    by common;
+	MERGE ANIMALMISSING PLANTMISSING;
+	BY common;
 RUN;
 
-PROC PRINT DATA=MATCHMERGE; 
+PROC PRINT DATA = MATCHMERGE;
 RUN;
