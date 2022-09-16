@@ -21,17 +21,13 @@ f Fig
 e Eggplant
 ;
 
-PROC SORT DATA = ANIMAL; 
-	by common; 
-RUN;
-
-PROC SORT DATA = PLANT; 
-	by common; 
-RUN;
 
 DATA MATCHMERGE;
     merge ANIMAL PLANT;
     by common;
+RUN;
+
+PROC PRINT DATA=MATCHMERGE; 
 RUN;
 
 /* Match-Merge Observations with Different Values of the BY Variable */
