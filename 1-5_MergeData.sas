@@ -1,7 +1,7 @@
 /* Match-Merging Observations Based on a BY Variable */
-data animal;
-input common $ animal $;
-datalines;
+DATA ANIMAL;
+INPUT common $ animal $;
+DATALINES;
 a Ant
 b Bird
 c Cat
@@ -10,34 +10,34 @@ e Eagle
 f Frog
 ;
 
-data plant;
-input common $ plant $;
-datalines;
+DATA PLANT;
+INPUT common $ plant $;
+DATALINES;
 a Apple
 b Banana
 c Coconut
 d Dewberry
-e Eggplant
 f Fig
+e Eggplant
 ;
 
-proc sort data=animal; by common; run;
-proc sort data=plant; by common; run;
+PROC SORT DATA = ANIMAL; 
+	by common; 
+RUN;
 
-data matchmerge;
-    merge animal plant;
+PROC SORT DATA = PLANT; 
+	by common; 
+RUN;
+
+DATA MATCHMERGE;
+    merge ANIMAL PLANT;
     by common;
-run;
-
-proc print data=matchmerge; 
-run;
-
+RUN;
 
 /* Match-Merge Observations with Different Values of the BY Variable */
-
-data animalMissing;
-input common $ animal $;
-datalines;
+DATA ANIMALMISSING;
+INPUT common $ animal $;
+DATALINES;
 a Ant
 c Cat
 d Dog
@@ -45,9 +45,9 @@ e Eagle
 ;
 
 
-data plantMissing2;
-input common $ plant $;
-datalines;
+DATA PLANTMISSING;
+INPUT common $ plant $;
+DATALINES;
 a Apple
 b Banana
 c Coconut
@@ -56,11 +56,18 @@ f Fig
 ;
 
 
-proc sort data=animalMissing; by common; run;
-proc sort data=plantMissing2; by common; run;
+PROC SORT DATA = ANIMALMISSING; 
+	by common; 
+RUN;
 
-data matchmerge;
-   merge animalMissing plantMissing2;
-   by common;
-run;
-proc print data=matchmerge; run;
+PROC SORT DATA = PLANTMISSING; 
+	by common; 
+RUN;
+
+DATA MATCHMERGE;
+    merge ANIMALMISSING PLANTMISSING;
+    by common;
+RUN;
+
+PROC PRINT DATA=MATCHMERGE; 
+RUN;
