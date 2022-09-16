@@ -1,51 +1,51 @@
 /* Format, Label, Split PROC Format */
-title "The First Five Observations Out of 322";
-proc print data=sashelp.baseball(obs=5) noobs;
-run;
-
-PROC PRINT DATA = SASHELP.BASEBALL(obs=5) noobs;
-FORMAT SALARY COMMA9.2;
+TITLE "The first five observations out of 322";
+	PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS;
 RUN;
 
-PROC PRINT DATA = SASHELP.BASEBALL(obs=5) noobs;
-FORMAT SALARY DOLLAR9.2 NAME $4.;
+PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS;
+	FORMAT SALARY COMMA9.2;
+RUN;
+
+PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS;
+	FORMAT SALARY DOLLAR9.2 NAME$4.;
 RUN;
 
 /* Format: Date */
-title "Sashelp.buy";
-proc print data=SASHELP.BUY(obs=5) noobs;
-run;
+TITLE "SASHELP.BUY";
+	PROC PRINT DATA = SASHELP.BUY(OBS = 5) NOOBS;
+RUN;
 
-title "Sashelp.buy";
-proc print data=SASHELP.BUY(obs=5) noobs;
-FORMAT DATE DATE9.;
-run;
+TITLE "SASHELP.BUY";
+	PROC PRINT DATA = SASHELP.BUY(OBS = 5) NOOBS;
+	FORMAT DATE DATE9.;
+RUN;
 
-title "Sashelp.buy";
-proc print data=SASHELP.BUY(obs=5) noobs;
-FORMAT DATE DATE6.;
-run;
+TITLE "SASHELP.BUY";
+	PROC PRINT DATA = SASHELP.BUY(OBS = 5) NOOBS;
+	FORMAT DATE DATE6.;
+RUN;
 
-title "Sashelp.buy";
-proc print data=SASHELP.BUY(obs=5) noobs;
-FORMAT DATE DDMMYY8.;
-run;
+TITLE "SASHELP.BUY";
+	PROC PRINT DATA = SASHELP.BUY(OBS = 5) NOOBS;
+	FORMAT DATE DDMMYY8.;
+RUN;
 
-title "Sashelp.buy";
-proc print data=SASHELP.BUY(obs=5) noobs;
-FORMAT DATE DDMMYY10.;
-run;
+TITLE "SASHELP.BUY";
+	PROC PRINT DATA = SASHELP.BUY(OBS = 5) NOOBS;
+	FORMAT DATE DDMMYY10.;
+RUN;
 
 
 /* Label */
-title "The First Five Observations Out of 322";
-proc print data=sashelp.baseball(obs=5) noobs;
-run;
+TITLE "The first five observations out of 322";
+	PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS;
+RUN;
 
 DATA WORK.BASEBALL;
-SET SASHELP.BASEBALL;
-LABEL
-Name = "Last Name, First";
+	SET SASHELP.BASEBALL;
+	LABEL
+	NAME = "Last Name, First Name";
 RUN;
 
 PROC CONTENTS DATA = WORK.BASEBALL;
@@ -60,34 +60,34 @@ RUN;
 PROC CONTENTS DATA = SASHELP.BASEBALL;
 RUN;
 
-title "The First Five Observations Out of 322";
-proc print data=sashelp.baseball(obs=5) noobs label;
-run;
+TITLE "The first five observations out of 322";
+	PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS LABEL;
+RUN;
 
-title "The First Five Observations Out of 322";
-proc print data=work.baseball(obs=5) noobs label;
-run;
+TITLE "The first five observations out of 322";
+	PROC PRINT DATA = WORK.BASEBALL(OBS = 5) NOOBS LABEL;
+RUN;
 
 /* Split */
 PROC PRINT DATA = SASHELP.BASEBALL LABEL;
-FORMAT NAME $4.;
-LABEL
-NAME = "Last Name, First Name";
+  FORMAT NAME $4.;
+  LABEL
+  NAME = "Last Name, First Name";
 RUN;
 
-PROC PRINT DATA = SASHELP.BASEBALL LABEL SPLIT = "*";
-FORMAT NAME $4.;
-LABEL
-NAME = "Last Name, Fi*rst Name";
+PROC PRINT DATA = SASHELP.BASEBALL(OBS = 5) NOOBS LABEL SPLT = "*";
+	FORMAT NAME $4.;
+	LABEL
+	NAME = "Last Name, Fir*st Name";
 RUN;
 
 /* PROCD FORMAT */
 PROC FORMAT;
-VALUE SALARYRANGE 0-<200 = "SALARY1"
-200-<400 = "SALARY2"
-400-<600 = "SALARY3";
+	VALUE SALARYRANGE 0-<200 = "SALARY1"
+	200-<400 = "SALARY2"
+	400-<600 = "SALARY3";
 RUN;
 
-PROC PRINT DATA = WORK.BASEBALL(obs=5) noobs;
-FORMAT SALARY SALARYRANGE.;
+PROC PRINT DATA = WORK.BASEBALL(OBS=5) NOOBS;
+	FORMAT SALARY SALARYRANGE.;
 RUN;
