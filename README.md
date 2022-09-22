@@ -10,7 +10,8 @@ Chapter 1\
 1-5 Merge Data\
 1-6 Data Formatting \
 \
-\url{https://www.youtube.com/playlist?list=PLn9iUowzNcDhkaR1b2p7Q-qigv9KlMiiL}
+Videos about Part 1: 
+https://www.youtube.com/playlist?list=PLn9iUowzNcDhkaR1b2p7Q-qigv9KlMiiL
 \
 Chapter 2\
 \
