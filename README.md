@@ -12,7 +12,7 @@ Chapter 1\
 \
 Videos about Chapter 1: 
 https://www.youtube.com/playlist?list=PLn9iUowzNcDhkaR1b2p7Q-qigv9KlMiiL
-\
+
 
 Chapter 2\
 \
