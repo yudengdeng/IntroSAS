@@ -17,6 +17,6 @@ https://www.youtube.com/playlist?list=PLn9iUowzNcDhkaR1b2p7Q-qigv9KlMiiL
 Chapter 2\
 \
 2-1 Descriptive Statistics\
-2-2 Stastistical Comparison\
+2-2 Statistical Comparison\
 2-3 Model Prediction\
 2-4 Model Selection
